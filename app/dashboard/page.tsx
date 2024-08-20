@@ -39,7 +39,7 @@ export default async function DashboardPage() {
                 />
               </div>
             </header>
-            <Link href="/interview">Interview</Link>
+
             {/* <UserDetails /> */}
           </div>
           <div className="pt-[3.5rem]">

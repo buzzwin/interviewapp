@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import TextToSpeech from "../components/text-to-speech";
 import SpeechToText from "../components/speech-to-text";
+import Link from "next/link";
 
 const InterviewQuestions: React.FC = () => {
   const [jobDescription, setJobDescription] = useState("");
@@ -72,7 +73,14 @@ const InterviewQuestions: React.FC = () => {
   };
 
   return (
-    <div className="max-w-2xl p-6 mx-auto bg-white rounded-lg shadow-md">
+    <div className="p-6 mx-auto bg-white rounded-lg shadow-md">
+      <Link
+        href="/"
+        className="px-4 py-2 rounded-full bg-[#8b8b8c] text-white text-sm font-semibold"
+      >
+        Home
+      </Link>
+      <div className="px-12 py-16 border-b border-[#F2F2F4]"></div>
       <h1 className="mb-6 text-3xl font-bold text-center text-gray-800">
         Interview Question Generator
       </h1>
@@ -80,17 +88,18 @@ const InterviewQuestions: React.FC = () => {
         <textarea
           value={jobDescription}
           onChange={(e) => setJobDescription(e.target.value)}
-          placeholder="Enter job description here"
+          placeholder="Enter job description or paste URL here"
           rows={5}
           className="w-full p-3 mb-4 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+
         <button
           type="submit"
           disabled={isLoading}
           className={`w-full py-2 px-4 rounded-md text-white font-semibold ${
             isLoading
               ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              : "focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 px-4 py-2  bg-[#131316] text-white text-sm font-semibold"
           }`}
         >
           {isLoading ? "Generating..." : "Generate Questions"}

@@ -20,20 +20,13 @@ export default function Home() {
     <>
       <main className="bg-[#FAFAFA] relative">
         <div className="w-full bg-white max-w-[75rem] mx-auto flex flex-col border-l border-r border-[#F2F2F2] row-span-3">
-          <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-[#F2F2F2]" />
-          <Image
-            alt="Device"
-            className="size-64 bg-transparent absolute left-1/2 -translate-x-[23.75rem] -top-6 h-[51.375rem] object-contain w-[39.0625rem]"
-            src={logo}
-            unoptimized
-          />
-
           <div className="px-12 py-16 border-b border-[#F2F2F4]">
-            <div className="bg-[#F4F4F5] px-4 py-3 rounded-full inline-flex gap-4">
-              <ClerkLogo />
-              <div aria-hidden className="w-px h-6 bg-[#C7C7C8]" />
-              <NextLogo />
-            </div>
+            <Link
+              href="/"
+              className="px-4 py-2 rounded-full bg-[#8b8b8c] text-white text-sm font-semibold"
+            >
+              Home
+            </Link>
           </div>
 
           <div className="p-10 border-b border-[#F2F2F2]">
@@ -48,10 +41,10 @@ export default function Home() {
             <div className="relative flex gap-3">
               <SignedIn>
                 <Link
-                  href="/dashboard"
+                  href="/interview"
                   className="px-4 py-2 rounded-full bg-[#131316] text-white text-sm font-semibold"
                 >
-                  Dashboard
+                  Interview Question Generator
                 </Link>
               </SignedIn>
               <SignedOut>
