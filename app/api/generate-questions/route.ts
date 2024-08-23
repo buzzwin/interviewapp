@@ -35,9 +35,9 @@ export async function POST(req: Request) {
     );
 
     const questions = response.data.choices[0].message.content
-      .split('\n')
-      .filter(line => line.trim().length > 0)
-      .map(question => question.replace(/^\d+\.\s*/, '').trim()); // Remove numbering if present
+  .split('\n')
+  .filter((line: string) => line.trim().length > 0)
+  .map((question: string) => question.replace(/^\d+\.\s*/, '').trim());
 
     return NextResponse.json({ questions });
   } catch (error) {
